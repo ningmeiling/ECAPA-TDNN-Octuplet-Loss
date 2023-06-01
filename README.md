@@ -1,4 +1,4 @@
-# ECAPA-TDNN-Octuplet-Loss-
+# ECAPA-TDNN-Octuplet-Loss
 Start from building the environment
 
 ```

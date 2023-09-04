@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Aug 30 20:45:39 2023
-
 @author: ningmeiling
 """
 import os
@@ -15,13 +14,13 @@ min_dcf = [0.9989, 0.5036, 0.1098]
 
 # 创建第一个子图
 plt.subplot(2, 1, 1)
-plt.plot(loss_functions, eer, marker='o', linestyle='-', color='paleturquoise')
+plt.bar(loss_functions, eer, color=['#FFFACD', '#B0E0E6', '#FFB6C1'])  # 自定义颜色
 plt.title('EER', fontsize=14, fontweight='bold')
 plt.xlabel('Loss Function', fontsize=12)
 plt.ylabel('Percentage', fontsize=12)
 plt.xticks(fontsize=10)
 plt.yticks(fontsize=10)
-plt.grid(axis='both', linestyle='--')
+plt.grid(axis='y', linestyle='--')
 
 # 在图上标注数值（加上百分号符号）
 for i in range(len(loss_functions)):
@@ -29,13 +28,13 @@ for i in range(len(loss_functions)):
 
 # 创建第二个子图
 plt.subplot(2, 1, 2)
-plt.plot(loss_functions, min_dcf, marker='o', linestyle='--', color='palegoldenrod')
+plt.bar(loss_functions, min_dcf, color=['#FFFACD', '#B0E0E6', '#FFB6C1'])  # 自定义颜色
 plt.title('minDCF', fontsize=14, fontweight='bold')
 plt.xlabel('Loss Function', fontsize=12)
 plt.ylabel('Percentage', fontsize=12)
 plt.xticks(fontsize=10)
 plt.yticks(fontsize=10)
-plt.grid(axis='both', linestyle='--')
+plt.grid(axis='y', linestyle='--')
 
 # 在图上标注数值（加上百分号符号）
 for i in range(len(loss_functions)):
@@ -46,7 +45,7 @@ plt.tight_layout()
 
 # 保存图像到桌面（dpi参数用于设置图像分辨率）
 desktop_path = os.path.expanduser("~/Desktop")
-save_path = os.path.join(desktop_path, "line_plot.png")
+save_path = os.path.join(desktop_path, "bar_plot.png")
 plt.savefig(save_path, dpi=300)
 
 # 显示图形
